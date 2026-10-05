@@ -1,0 +1,64 @@
+{
+  "notes": [
+    {
+      "number": "001",
+      "slug": "residue",
+      "title": "Residue",
+      "file": "notes/001-residue.md"
+    },
+    {
+      "number": "002",
+      "slug": "caught-in-the-net",
+      "title": "Caught in the Net",
+      "file": "notes/002-caught-in-the-net.md"
+    },
+    {
+      "number": "003",
+      "slug": "Rituals",
+      "title": "Rituals",
+      "file": "notes/003-rituals.md"
+    },
+    {
+      "number": "004",
+      "slug": "distance",
+      "title": "Distance",
+      "file": "notes/004-distance.md"
+    },
+    {
+      "number": "005",
+      "slug": "frequencies",
+      "title": "Frequencies",
+      "file": "notes/005-frequencies.md"
+    },
+    {
+      "number": "006",
+      "slug": "magic-lantern",
+      "title": "Magic Lantern",
+      "file": "notes/006-magic-lantern.md"
+    },
+    {
+      "number": "007",
+      "slug": "cycles",
+      "title": "Cycles",
+      "file": "notes/007-cycles.md"
+    },
+    {
+      "number": "008",
+      "slug": "the-bug",
+      "title": "The Bug",
+      "file": "notes/008-the-bug.md"
+    },
+    {
+      "number": "009",
+      "slug": "afterimage",
+      "title": "Afterimage",
+      "file": "notes/009-afterimage.md"
+    },
+    {
+      "number": "010",
+      "slug": "stay-still",
+      "title": "Stay Still",
+      "file": "notes/010-stay-still.md"
+    }
+  ]
+}

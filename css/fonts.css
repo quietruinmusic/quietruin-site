@@ -1,0 +1,94 @@
+@font-face {
+    font-family: "BorisBlackBloxx";
+    src: url("../assets/fonts/BorisBlackBloxx.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Michroma";
+    src: url("../assets/fonts/Michroma-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+   :root {
+    --font-body: "Michroma", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-display: var(--font-body);
+    --text-primary: #c5bfaf;
+    --text-secondary: rgba(197, 191, 175, 0.72);
+}
+
+html,
+body,
+button,
+input,
+textarea,
+select {
+    font-family: var(--font-body);
+}
+
+body {
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-size: 0.94rem;
+    line-height: 1.92;
+}
+
+a {
+    color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.home-title,
+.archive-title,
+.notes-title,
+.note-title,
+.canon-statement,
+.signal-title,
+.release-title,
+.archive-release-title,
+.notes-entry-title,
+.release-section-title,
+.release-video-title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-synthesis: none;
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    letter-spacing: 0.12em;
+}
+
+.home-title,
+.archive-title,
+.notes-title,
+.note-title,
+.signal-title,
+.release-title {
+    font-size: 0.92em;
+    letter-spacing: 0.06em;
+}
+
+.room-nav,
+.home-navigation {
+    color: rgba(197, 191, 175, 0.42);
+}
+
+.room-nav-link[aria-current="page"],
+.home-navigation a:hover,
+.notes-entry-link:hover .notes-entry-title,
+.archive-link:hover .archive-release-title,
+.signal-link:hover,
+.note-nav a:hover,
+.release-link:hover {
+    color: rgba(206, 201, 191, 0.92);
+}

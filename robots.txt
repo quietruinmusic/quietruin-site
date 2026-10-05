@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+Disallow: /docs/
+Disallow: /notes/
+Disallow: /quietruinmusic/
+Disallow: /surface-comparison.html
+Disallow: /typography-studies.html
+Disallow: /todo.md
+
+Sitemap: https://quietruinmusic.com/sitemap.xml

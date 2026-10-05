@@ -1,0 +1,29 @@
+html {
+    min-height: 100%;
+    background-color: #111111;
+    background-image: url("../assets/textures/Cardosa-Slate.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+body {
+    min-height: 100vh;
+    color: #c5bfaf;
+    background: transparent;
+    position: relative;
+    isolation: isolate;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("../assets/textures/Cardosa-Slate.png");
+    background-size: cover;
+    background-position: center;
+    opacity: 1;
+    filter: brightness(0.54) contrast(0.88) saturate(0.82);
+    pointer-events: none;
+    z-index: -1;
+}

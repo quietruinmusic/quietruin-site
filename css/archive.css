@@ -1,0 +1,145 @@
+.archive-page *,
+.archive-page *::before,
+.archive-page *::after {
+    box-sizing: border-box;
+}
+
+body.archive-page {
+    margin: 0;
+    color: #c5bfaf;
+    line-height: 1.9;
+    min-height: 100vh;
+}
+
+.archive-shell {
+    width: min(880px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 0 0 112px;
+    text-align: center;
+}
+
+.room-nav {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    padding: 22px 24px 0;
+    font-size: 0.76rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(197, 191, 175, 0.5);
+}
+
+.room-nav-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.room-nav-link[aria-current="page"] {
+    color: rgba(197, 191, 175, 0.82);
+}
+
+.archive-header,
+.archive-section {
+    opacity: 0;
+    transform: translateY(1px);
+    transition:
+        opacity 720ms ease,
+        transform 720ms ease;
+}
+
+.archive-header.visible,
+.archive-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.archive-header {
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 18px;
+}
+
+.archive-title {
+    margin: 10px 0 0;
+    font-size: clamp(1.35rem, 2.7vw, 1.9rem);
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    line-height: 1.14;
+}
+
+.archive-section {
+    margin-top: 24px;
+}
+
+.archive-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.archive-record {
+    display: grid;
+    gap: 4px;
+    width: max-content;
+    margin: 0 auto;
+}
+
+.archive-record-label {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.72rem;
+    color: rgba(197, 191, 175, 0.5);
+}
+
+.archive-link {
+    display: grid;
+    gap: 4px;
+    text-decoration: none;
+    color: inherit;
+    padding: 14px 0;
+}
+
+.archive-release-title {
+    font-size: 0.96rem;
+    font-weight: 400;
+    letter-spacing: 0.072em;
+    color: rgba(197, 191, 175, 0.94);
+    transition: color 180ms ease, opacity 180ms ease;
+}
+
+.archive-release-meta {
+    font-size: 0.76rem;
+}
+
+.archive-link:hover .archive-release-title {
+    color: rgba(206, 201, 191, 0.96);
+    opacity: 1;
+}
+
+.archive-link:hover .archive-release-meta {
+    opacity: 0.92;
+}
+
+@media (max-width: 820px) {
+    .room-nav {
+        gap: 18px;
+        padding-top: 18px;
+    }
+
+    .archive-shell {
+        width: min(100% - 32px, 880px);
+        padding-bottom: 96px;
+    }
+
+    .archive-header {
+        min-height: 32vh;
+    }
+
+    .archive-section {
+        margin-top: 34px;
+    }
+}
