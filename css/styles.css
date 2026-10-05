@@ -74,6 +74,8 @@ body {
 
     .home-title {
         font-size: clamp(1.8rem, 8vw, 2.35rem);
+        position: relative;
+        top: -24px;
     }
 
     .home-navigation {
