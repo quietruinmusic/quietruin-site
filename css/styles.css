@@ -69,17 +69,15 @@ body {
 
 @media (max-width: 820px) {
     .home-shell {
-        transform: translateY(-34px);
+        transform: translateY(-60px);
     }
 
     .home-title {
         font-size: clamp(1.8rem, 8vw, 2.35rem);
-        position: relative;
-        top: -24px;
     }
 
     .home-navigation {
-        margin-top: -16px;
+        margin-top: 52px;
         gap: 16px 20px;
     }
 }
