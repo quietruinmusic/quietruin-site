@@ -1,5 +1,7 @@
 const NOTES_MANIFEST_URL = "notes/manifest.json";
 
+const noteUrl = (slug) => `notes/${encodeURIComponent(slug)}/`;
+
 const escapeHtml = (value) =>
     value
         .replaceAll("&", "&amp;")
@@ -56,7 +58,7 @@ const renderIndex = async () => {
 
     leftList.innerHTML = leftNotes.map((note) => `
         <li class="notes-entry">
-            <a class="notes-entry-link" href="note.html?slug=${encodeURIComponent(note.slug)}">
+            <a class="notes-entry-link" href="${noteUrl(note.slug)}">
                 <p class="notes-entry-title">${escapeHtml(note.title)}</p>
                 <p class="notes-entry-meta">Note ${note.number}</p>
             </a>
@@ -65,7 +67,7 @@ const renderIndex = async () => {
 
     rightList.innerHTML = rightNotes.map((note) => `
         <li class="notes-entry">
-            <a class="notes-entry-link" href="note.html?slug=${encodeURIComponent(note.slug)}">
+            <a class="notes-entry-link" href="${noteUrl(note.slug)}">
                 <p class="notes-entry-title">${escapeHtml(note.title)}</p>
                 <p class="notes-entry-meta">Note ${note.number}</p>
             </a>
@@ -96,9 +98,11 @@ const renderNote = async () => {
     }
 
     const params = new URLSearchParams(window.location.search);
-    const slug = params.get("slug") || "residue";
+    const pathMatch = window.location.pathname.match(/\/notes\/([^/]+)\/?$/);
+    const pathSlug = pathMatch ? decodeURIComponent(pathMatch[1]) : "";
+    const slug = params.get("slug") || pathSlug || "residue";
     const manifest = await loadManifest();
-    const index = manifest.notes.findIndex((note) => note.slug === slug);
+    const index = manifest.notes.findIndex((note) => note.slug.toLowerCase() === slug.toLowerCase());
     const note = manifest.notes[index >= 0 ? index : 0];
     if (!note) {
         return;
@@ -120,12 +124,12 @@ const renderNote = async () => {
 
     const canonicalLink = document.getElementById("canonical-link");
     if (canonicalLink) {
-        canonicalLink.href = `https://quietruinmusic.com/note.html?slug=${encodeURIComponent(note.slug)}`;
+        canonicalLink.href = `https://quietruinmusic.com/${noteUrl(note.slug)}`;
     }
 
     const ogUrl = document.getElementById("og-url");
     if (ogUrl) {
-        ogUrl.content = `https://quietruinmusic.com/note.html?slug=${encodeURIComponent(note.slug)}`;
+        ogUrl.content = `https://quietruinmusic.com/${noteUrl(note.slug)}`;
     }
 
     const descriptionMeta = document.querySelector('meta[name="description"]');
@@ -150,8 +154,8 @@ const renderNote = async () => {
 
     const prev = manifest.notes[index - 1];
     const next = manifest.notes[index + 1];
-    const prevHref = prev ? `note.html?slug=${encodeURIComponent(prev.slug)}` : "notes.html";
-    const nextHref = next ? `note.html?slug=${encodeURIComponent(next.slug)}` : "notes.html";
+    const prevHref = prev ? noteUrl(prev.slug) : "notes.html";
+    const nextHref = next ? noteUrl(next.slug) : "notes.html";
     nav.innerHTML = `
         <a href="${prevHref}">Previous Note</a>
         <a href="${nextHref}">Next Note</a>
