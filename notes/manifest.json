@@ -41,24 +41,6 @@
       "slug": "cycles",
       "title": "Cycles",
       "file": "notes/007-cycles.md"
-    },
-    {
-      "number": "008",
-      "slug": "the-bug",
-      "title": "The Bug",
-      "file": "notes/008-the-bug.md"
-    },
-    {
-      "number": "009",
-      "slug": "afterimage",
-      "title": "Afterimage",
-      "file": "notes/009-afterimage.md"
-    },
-    {
-      "number": "010",
-      "slug": "stay-still",
-      "title": "Stay Still",
-      "file": "notes/010-stay-still.md"
     }
   ]
 }

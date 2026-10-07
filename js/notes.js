@@ -53,8 +53,9 @@ const renderIndex = async () => {
     }
 
     const manifest = await loadManifest();
-    const leftNotes = manifest.notes.slice(0, 5);
-    const rightNotes = manifest.notes.slice(5);
+    const splitIndex = Math.ceil(manifest.notes.length / 2);
+    const leftNotes = manifest.notes.slice(0, splitIndex);
+    const rightNotes = manifest.notes.slice(splitIndex);
 
     leftList.innerHTML = leftNotes.map((note) => `
         <li class="notes-entry">
@@ -103,10 +104,11 @@ const renderNote = async () => {
     const slug = params.get("slug") || pathSlug || "residue";
     const manifest = await loadManifest();
     const index = manifest.notes.findIndex((note) => note.slug.toLowerCase() === slug.toLowerCase());
-    const note = manifest.notes[index >= 0 ? index : 0];
-    if (!note) {
+    if (index < 0) {
+        window.location.replace("404.html");
         return;
     }
+    const note = manifest.notes[index];
 
     const response = await fetch(note.file, { cache: "no-store" });
     if (!response.ok) {
